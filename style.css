@@ -1,10 +1,106 @@
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
   margin: 0;
-  padding: 40px;
+  font-family: "Inter", sans-serif;
+  background-color: #10261d;
+  color: white;
 }
 
-h1 {
-  font-size: 48px;
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  padding: 20px 0;
+  z-index: 10;
+}
+
+nav a {
+  color:white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+.hero-content {
+  width: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
+  text-align: center;
+
+}
+.hero {
+  min-height: 100vh;
+
+  background:
+  linear-gradient(
+    rgba(10,35,25, 0.45),
+    rgba(10,35,25,0.75)
+  ),
+  url("images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content h1 {
+  font-size: clamp(70px, 9vwm, 110w);
+  font-weight: 800;
+  margin: 0;
+  color: white;
+  opacity: 0;
+
+
+  transform: translateY(40px);
+  animation: heroBounce 1.4s ease-in-out 0.4s both;
+}
+.hero-content p {
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+
+  opacity: 0;
+  transform: translateY(25px);
+
+  animation: subtitleFade 1.2s ease-in-out 0.8s both;
+}
+
+@keyframes heroBounce {
+  0% {
+    opacity: 0;
+    transform: translateY(50px)
+    scale(0.96);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(-8px)
+    scale(1.02);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(3px)
+    scale(0.995);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0)
+    scale(1);
+  }
+
+}
+@keyframes subtitleFade {
+
+  from {
+    opacity: 0;
+    transform: tssranslateY(25px);
+    /* Invisible and slightly lower */
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    /* Visible and in its normal position */
+  }
 }
