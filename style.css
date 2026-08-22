@@ -64,7 +64,7 @@ nav a {
 }
 
 .hero-content h1 {
-  font-size: clamp(70px, 9vw, 110px);
+  font-size: clamp(50px, 7vw, 80px);
   font-weight: 800;
   margin: 0;
   color: white;
