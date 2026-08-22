@@ -157,6 +157,7 @@ background-color: #10261d;
 /* Base style for each photo */ 
 
 .photo-bubble {
+  
   overflow: hidden;
 
   border-radius: 28px;
