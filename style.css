@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "Inter", sans-serif;
-  background-cover: "contain";
+  background-size: "contain";
   background-color: #10261d;
   color: white;
 }
