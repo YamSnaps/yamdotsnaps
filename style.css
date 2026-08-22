@@ -58,13 +58,13 @@ nav a {
   text-align: center;
 }
 .hero-image {
-  width: 100;
+  width: 100%;
   height: auto;
   display: block;
 }
 
 .hero-content h1 {
-  font-size: clamp(70px, 9vwm, 110w);
+  font-size: clamp(70px, 9vw, 110px);
   font-weight: 800;
   margin: 0;
   color: white;
@@ -112,7 +112,7 @@ nav a {
 
   from {
     opacity: 0;
-    transform: tssranslateY(25px);
+    transform: translateY(25px);
     /* Invisible and slightly lower */
   }
 
@@ -134,8 +134,8 @@ background-color: #10261d;
 }
 
 /*Portfolio TITLE*/
-.portfolio-section h2 {
-  font-size: clamp(45px, 7vw, 90px);
+#portfolio h2 {
+  font-size: clamp(60px, 9vw, 120px);
 
   margin-bottom: 70px;
 
@@ -159,9 +159,7 @@ background-color: #10261d;
 .photo-bubble {
   
   overflow: hidden;
-
   border-radius: 28px;
-
   transition:
   transform 0.4s ease,
   box-shadow 0.4s ease;
@@ -197,4 +195,68 @@ background-color: #10261d;
 
   box-shadow:
   0 25px 60px rgba(0, 0, 0,0.35);
+}
+
+
+.category-toggle{
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  padding: 15px 0;
+  margin-bottom: 20px;
+
+  cursor: pointer;
+}
+  /* Hide photos when category is closed */
+.category-content {
+  display: none;
+}
+
+
+/* Show photos when category is opened */
+.category-content.open {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+/* Run bounce animation on each photo */
+.category-content.open .photo-bubble {
+  animation: bubbleOpen 0.7s ease-out;
+}
+
+
+/* =========================
+   BOUNCE ANIMATION
+   ========================= */
+
+@keyframes bubbleOpen {
+
+  /* Start invisible, lower, and slightly smaller */
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.92);
+  }
+
+  /* Move slightly above the final position */
+  60% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.03);
+  }
+
+  /* Bounce slightly downward */
+  80% {
+    opacity: 1;
+    transform: translateY(3px) scale(0.99);
+  }
+
+  /* Settle into the normal position */
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
