@@ -5,6 +5,22 @@ body {
   background-color: #10261d;
   color: white;
 }
+
+/* Prevent wide content from making the whole page
+   wider than the phone screen. */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Include padding inside an element's declared width. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 html {
   scroll-behavior: smooth;
 
@@ -314,9 +330,15 @@ background-color: #10261d;
     justify-content: flex-start;
     gap: 24px;
     padding: 16px 20px;
-    box-sizing: border-box;
+    max-width: 100vw;
     overflow-x: auto;
     background-color: rgba(16, 38, 29, 0.95);
+    scrollbar-width: none;
+  }
+
+  /* Hide the navigation scrollbar in Safari. */
+  nav::-webkit-scrollbar {
+    display: none;
   }
 
   /* Stop individual navigation labels from wrapping
@@ -332,6 +354,27 @@ background-color: #10261d;
     scroll-margin-top: 70px;
   }
 
+  /* Give the cover photo a balanced phone-sized frame
+     instead of stretching it beyond the visible screen. */
+  .hero {
+    width: 100%;
+    min-height: 82svh;
+    background-position: center center;
+  }
+
+  /* Keep the cover title comfortably inside the screen. */
+  .hero-content {
+    padding: 0 20px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(42px, 13vw, 58px);
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
   .about-section {
     padding: 60px 24px;
   }
@@ -344,7 +387,7 @@ background-color: #10261d;
   .about-content {
     flex-direction: column;
 
-    align-items: stretch;
+    align-items: center;
 
     gap: 35px;
 
@@ -356,14 +399,25 @@ background-color: #10261d;
   }
   .about-text {
     width: 100%;
-    max-width: none;
+    max-width: 560px;
 
     opacity: 1;
     transform: none;
   }
 
+  /* Separate the heading from the paragraph and
+     keep its size proportional on a phone. */
+  .about-text h3 {
+    margin: 0 0 14px;
+    font-size: 28px;
+  }
+
+  /* A slightly larger font and relaxed line spacing
+     make the About paragraph easier to read. */
   .about-text p {
-    line-height: 1.6;
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.65;
   }
 
 }
