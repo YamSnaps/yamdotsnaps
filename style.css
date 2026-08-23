@@ -291,3 +291,18 @@ background-color: #10261d;
   height: auto;
   display: block;
 }
+
+.about-text {
+  max-width: 650px;
+  opacity: 0;
+
+  transform: translateX(60px);
+
+  transition:
+  opacity 1.2s ease,
+  transform 1.2s ease;
+}
+.about-text.show {
+  opacity: 1;
+  transform: translateX(0);
+}
