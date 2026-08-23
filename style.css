@@ -306,3 +306,64 @@ background-color: #10261d;
   opacity: 1;
   transform: translateX(0);
 }
+
+@media (max-width: 700px){
+  /* Keep the navigation links on one readable line.
+     If they do not fit, the user can swipe sideways. */
+  nav {
+    justify-content: flex-start;
+    gap: 24px;
+    padding: 16px 20px;
+    box-sizing: border-box;
+    overflow-x: auto;
+    background-color: rgba(16, 38, 29, 0.95);
+  }
+
+  /* Stop individual navigation labels from wrapping
+     onto two lines or shrinking into each other. */
+  nav a {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* Add space so anchored sections are not hidden
+     underneath the fixed navigation bar. */
+  section {
+    scroll-margin-top: 70px;
+  }
+
+  .about-section {
+    padding: 60px 24px;
+  }
+  .about-title{
+    font-size: 64px;
+    margin-bottom: 30px;
+
+  }
+
+  .about-content {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 35px;
+
+  }
+
+  .about-photo {
+    width: 100%;
+    max-width: 340px;
+  }
+  .about-text {
+    width: 100%;
+    max-width: none;
+
+    opacity: 1;
+    transform: none;
+  }
+
+  .about-text p {
+    line-height: 1.6;
+  }
+
+}
