@@ -133,6 +133,117 @@ window.formspree =
   </div>
 </div>
 
+<div class="portfolio-category">
+  <button class="category-toggle" type="button" aria-expanded="false">
+    <img src="images/Shirt.jpg" alt="Fashion photography">
+    <span>Editorial</span>
+    </button>
+    <div class="portfolio-bubbles category-content">
+
+      <div class="photo-bubble portrait">
+        <img src="images/CoverPhoto.jpg">
+      </div>
+
+      <div class="photo-bubble landscape">
+        <img src="images/Shirt.jpg">
+      </div>
+      <div class="photo-bubble portrait">
+        <img src="images/amanda.jpg">
+      </div>
+      <div class="photo-bubble portrait">
+        <img src="images/AMPortraitFS.jpg">
+      </div>
+      <div class="photo-bubble portrait">
+        <img src="images/Gazebo.jpg">
+      </div>
+      <div class="photo-bubble portrait">
+        <img src="images/Jaydencape.jpg">
+      </div>
+      <div class="photo-bubble landscape">
+        <img src="images/Beachgroup.jpg">
+      </div>
+      <div class="photo-bubble landscape">
+        <img src="images/trio.jpg">
+      </div>
+      <div class="photo-bubble landscape">
+        <img src="images/Nicoleshirt.jpg">
+      </div>
+</div>
+      </div>
+
+      <div class="portfolio-category">
+        <button class="category-toggle" type="button" aria-expanded="false">
+          <img src="images/Welcome.jpg" alt="Fashion show photography">
+          <span>Fashion Shows</span>
+        </button>
+        <div class="portfolio-bubbles category-content">
+
+          <div class="photo-bubble portrait">
+            <img src="images/AdamsW.jpg">
+          </div>
+
+            <div class="photo-bubble landscape">
+              <img src="images/Auralogan.jpg">
+            </div>
+            <div class="photo-bubble portrait">
+              <img src="images/TripleShow.jpg">
+            </div>
+            <div class="photo-bubble landscape">
+              <img src="images/coverface.jpg">
+            </div>
+            <div class="photo-bubble portrait">
+              <img src="images/neon.jpg">
+            </div>
+            <div class="photo-bubble landscape">
+              <img src="images/huge.jpg">
+            </div>
+            <div class="photo-bubble landscape">
+              <img src="images/girlgroup.jpg">
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-category">
+          <button class="category-toggle" type="button" aria-expanded="false">
+            <img src="images/Welcome.jpg" alt="Black and Yellow photography">
+            <span>Black and Yellow</span>
+          </button>
+          <div class="portfolio-bubbles category-content">
+
+            <div class="photo-bubble portrait">
+              <img src="images/huge.jpg">
+            </div>
+
+            </div>
+            </div>
+<div class="portfolio-category">
+  <button class="category-toggle" type="button" aria-expanded="false">
+    <img src="images/Ferrari.jpg" alt="Fashion photography">
+    <span>Cars</span>
+  </button>
+    <div class="portfolio-bubbles category-content">
+
+      <div class="photo-bubble portrait">
+        <img src="images/Cobra.jpg">
+      </div>
+
+        <div class="photo-bubble landscape">
+          <img src="images/FrontCobra.jpg">
+        </div>
+        <div class="photo-bubble portrait">
+          <img src="images/Steeringwheelcobra.jpg">
+        </div>
+        <div class="photo-bubble landscape">
+          <img src="images/GT500.jpg">
+        </div>
+        <div class="photo-bubble landscape">
+          <img src="images/CA.jpg">
+        </div>
+        <div class="photo-bubble landscape">
+          <img src="images/BMW.jpg">
+        </div>
+    </div>
+  </div>
 
 <div class="portfolio-category">
   <button class="category-toggle" type="button" aria-expanded="false">
@@ -196,6 +307,8 @@ window.formspree =
 
 </div>
 
+</section>
+
 <section id="about" class="about-section">
 
   <h2 class="about-title">About</h2>
@@ -237,42 +350,35 @@ window.formspree =
     <!-- Contact form panel -->
     <form id="contact-form"   class="contact-form"
     action="https://formspree.io/f/xyeganpa"
-    method="POST"
-    
-    >
+    method="POST">
     <div data-fs-success>Sent!</div>
     <div data-fs-error></div>
       <!-- Name field -->
       <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name"
-        data-fs-field
-        >
+          data-fs-field required>
       </div>
 
       <!-- Email field -->
       <div class="form-group">
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Your email" autocomplete="email"
-        data-fs-field
-        >
-
-        
+          data-fs-field required>
       </div>
 
       <!-- Larger field for the visitor's message -->
       <div class="form-group">
         <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" placeholder="Ready to feel like your on the big screen?"></textarea
-          data-fs-field
-          ></textarea>
+        <textarea id="message" name="message" rows="6"
+          placeholder="Ready to feel like you're on the big screen?"
+          data-fs-field required></textarea>
       </div>
 
       <!-- This is currently the visual button.
            An email service can be connected later. -->
       <button type="submit" class="contact-button" data-fs-submit-btn>
         Send Message
-        
       </button>
     </form>
   </div>
