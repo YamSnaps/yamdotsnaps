@@ -3,7 +3,15 @@ const categoryButtons = document.querySelectorAll(".category-toggle");
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const pictures = button.nextElementSibling;
+    const category = button.closest(".portfolio-category");
     pictures.classList.toggle("open");
+
+    // Tell screen readers whether this category is open or closed.
+    const isOpen = pictures.classList.contains("open");
+    button.setAttribute("aria-expanded", isOpen);
+
+    // Let the opened gallery stretch across all grid columns.
+    category.classList.toggle("open", isOpen);
   });
 });
 

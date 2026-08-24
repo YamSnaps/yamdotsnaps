@@ -214,18 +214,96 @@ background-color: #10261d;
 }
 
 
-.category-toggle{
-  background: none;
+/* Three category covers sit beside each other on large screens. */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.portfolio-category {
+  min-width: 0;
+}
+
+/* An opened category takes the entire grid width so its
+   gallery is not squeezed into one small column. */
+.portfolio-category.open {
+  grid-column: 1 / -1;
+}
+
+/* The category button is now a large landscape photograph. */
+.category-toggle {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto 36px;
+  padding: 0;
+  overflow: hidden;
   border: none;
+  border-radius: 28px;
+  background: #0a1d16;
   color: white;
   text-align: left;
   font-family: "Inter", sans-serif;
-  font-size: 25px;
-  font-weight: 600;
-  padding: 10px 0;
-  margin-bottom: 20px;
-
   cursor: pointer;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* When a gallery is open, keep its cover the same width
+   as one of the three closed category cards. */
+.portfolio-category.open .category-toggle {
+  width: calc((100% - 56px) / 3);
+  margin-left: 0;
+}
+
+/* Make the cover photograph completely fill the button. */
+.category-toggle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Dark gradient keeps the white category name readable. */
+.category-toggle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(4, 17, 12, 0.82),
+    rgba(4, 17, 12, 0.08) 65%
+  );
+}
+
+/* Category name displayed over the bottom-left of the image. */
+.category-toggle span {
+  position: absolute;
+  left: 28px;
+  bottom: 24px;
+  z-index: 1;
+  max-width: calc(100% - 56px);
+  font-size: clamp(24px, 4vw, 42px);
+  font-weight: 700;
+}
+
+.category-toggle:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 26px 60px rgba(0, 0, 0, 0.34);
+}
+
+.category-toggle:hover img {
+  transform: scale(1.04);
+}
+
+/* Visible keyboard focus for visitors who do not use a mouse. */
+.category-toggle:focus-visible {
+  outline: 3px solid white;
+  outline-offset: 5px;
 }
   /* Hide photos when category is closed */
 .category-content {
@@ -419,6 +497,17 @@ background-color: #10261d;
   background-color: #dcebe4;
 }
 
+/* Use two category columns on tablets. */
+@media (max-width: 900px) {
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .portfolio-category.open .category-toggle {
+    width: calc((100% - 28px) / 2);
+  }
+}
+
 @media (max-width: 700px){
   /* Keep the navigation links on one readable line.
      If they do not fit, the user can swipe sideways. */
@@ -469,6 +558,22 @@ background-color: #10261d;
 
   .hero-content p {
     font-size: 18px;
+  }
+
+  /* Stack category covers in one column on phones. */
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .portfolio-category.open .category-toggle {
+    width: 100%;
+  }
+
+  .category-toggle span {
+    left: 20px;
+    bottom: 18px;
+    max-width: calc(100% - 40px);
   }
 
   .about-section {

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <script src="script.js" defer> </script>
+  <script src="script.js?v=2" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,7 +10,7 @@
 
   <!-- Change the version number after major CSS updates.
        This makes browsers download the newest stylesheet. -->
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -58,8 +58,15 @@ window.formspree =
   
   <h2>Portfolio</h2>
 
+<!-- Holds the landscape category covers in a responsive grid. -->
+<div class="category-grid">
+
 <div class="portfolio-category">
-  <button class="category-toggle">Film Inspired/Conceptual</button>
+  <!-- Landscape category cover. Clicking it opens the gallery below. -->
+  <button class="category-toggle" type="button" aria-expanded="false">
+    <img src="images/Americandream.jpg" alt="Film inspired and conceptual photography">
+    <span>Film Inspired/Conceptual</span>
+  </button>
 
   <div class="portfolio-bubbles category-content">
 
@@ -72,7 +79,7 @@ window.formspree =
     </div>
 
     <div class="photo-bubble portrait">
-      <img src="images/Green.jpg">
+      <img src="images/Mermaid.jpg">
     </div>
 
     <div class="photo-bubble portrait">
@@ -92,7 +99,10 @@ window.formspree =
 
 
 <div class="portfolio-category">
-  <button class="category-toggle">Fashion</button>
+  <button class="category-toggle" type="button" aria-expanded="false">
+    <img src="images/Red.jpg" alt="Fashion photography">
+    <span>Fashion</span>
+  </button>
 
   <div class="portfolio-bubbles category-content">
 
@@ -125,7 +135,10 @@ window.formspree =
 
 
 <div class="portfolio-category">
-  <button class="category-toggle">Sports</button>
+  <button class="category-toggle" type="button" aria-expanded="false">
+    <img src="images/behindnet.jpg" alt="Sports photography">
+    <span>Sports</span>
+  </button>
 
   <div class="portfolio-bubbles category-content">
 
@@ -153,7 +166,10 @@ window.formspree =
 </div>
 
 <div class="portfolio-category">
-  <button class="category-toggle">Concert</button>
+  <button class="category-toggle" type="button" aria-expanded="false">
+    <img src="images/concert2.jpg" alt="Concert photography">
+    <span>Concert</span>
+  </button>
   
   <div class="portfolio-bubbles category-content">
 
@@ -176,6 +192,8 @@ window.formspree =
       <img src="images/concert6.jpg">
     </div>
 </div>
+</div>
+
 </div>
 
 <section id="about" class="about-section">
