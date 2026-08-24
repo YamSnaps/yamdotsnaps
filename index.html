@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <script src="script.js?v=2" defer></script>
+  <script src="script.js?v=3" defer></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,32 +10,12 @@
 
   <!-- Change the version number after major CSS updates.
        This makes browsers download the newest stylesheet. -->
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 </head>
-
-
-
-<script>
-window.formspree = 
-  window.formspree ||
-    function (){
-      (formspree.q = formspree.q || []).push(arguments);
-
-    };
-    formspree("initForm", {
-      formElement: "#contact-form",
-      formId: "xyeganpa"
-    });
-  </script>
-  <script
-    src="https://unpkg.com/@formspree/ajax@1"
-    defer>
-  </script>
-
 
 
 
@@ -384,6 +364,25 @@ window.formspree =
   </div>
 
 </section>
+
+<!-- Formspree submits the contact form without leaving this page. -->
+<script>
+  window.formspree =
+    window.formspree ||
+    function () {
+      (formspree.q = formspree.q || []).push(arguments);
+    };
+
+  formspree("initForm", {
+    formElement: "#contact-form",
+    formId: "xyeganpa"
+  });
+</script>
+
+<script
+  src="https://unpkg.com/@formspree/ajax@1"
+  defer>
+</script>
 
 </body>
 </html>

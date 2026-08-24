@@ -1,8 +1,22 @@
 const categoryButtons = document.querySelectorAll(".category-toggle");
 
 categoryButtons.forEach((button) => {
+  const pictures = button.nextElementSibling;
+  const categoryName =
+    button.querySelector("span")?.textContent.trim() || "Portfolio";
+
+  // Load gallery photos only when they are near the screen.
+  // This keeps the page faster, especially on phones.
+  pictures.querySelectorAll("img").forEach((image, index) => {
+    image.loading = "lazy";
+
+    // Supply useful fallback text when an image has no written alt text.
+    if (!image.hasAttribute("alt")) {
+      image.alt = `${categoryName} portfolio photograph ${index + 1}`;
+    }
+  });
+
   button.addEventListener("click", () => {
-    const pictures = button.nextElementSibling;
     const category = button.closest(".portfolio-category");
     pictures.classList.toggle("open");
 
